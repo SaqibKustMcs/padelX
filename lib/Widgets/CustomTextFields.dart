@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomTextFields extends StatelessWidget {
   CustomTextFields(
       {this.controller,
+        this.obscure=false,
         this.height,
         this.validator,
         this.hintText,
@@ -24,6 +25,7 @@ class CustomTextFields extends StatelessWidget {
   var leadinIcon;
   var onpressedLeading;
   var validator;
+  var obscure;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,6 +33,7 @@ class CustomTextFields extends StatelessWidget {
       child: Container(
         height: 50,
         child: TextFormField(
+          obscureText: obscure,
           validator: validator ??
                   (String? value) {
                 if (value!.isEmpty) {

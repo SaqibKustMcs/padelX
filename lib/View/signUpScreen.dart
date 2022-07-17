@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +14,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final nameController= TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmedPasswordController = TextEditingController();
@@ -39,27 +41,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
 
-  Future signIn() async {
-    String pass= "";
-    if(passwordController.text == confirmedPasswordController.text){
-      pass = passwordController.text;
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-          email: emailController.text.trim(),
-          password: pass
-      ).then((value) => Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen() )));
-    } else {
-      final snackBar = SnackBar(
-        content: const Text('Passwords must be same'),
-        action: SnackBarAction(
-          label: 'OK',
-          onPressed: () {
-            // Some code to undo the change.
-          },
-        ),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    }
-  }
+  // Future signIn() async {
+  //   String pass= "";
+  //   if(passwordController.text == confirmedPasswordController.text){
+  //     pass = passwordController.text;
+  //     await FirebaseAuth.instance.createUserWithEmailAndPassword(
+  //         email: emailController.text.trim(),
+  //         password: pass
+  //     ).then((value) => Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen() )));
+  //   } else {
+  //     final snackBar = SnackBar(
+  //       content: const Text('Passwords must be same'),
+  //       action: SnackBarAction(
+  //         label: 'OK',
+  //         onPressed: () {
+  //           // Some code to undo the change.
+  //         },
+  //       ),
+  //     );
+  //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +75,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children:[
+
                 SizedBox(
                   height: 125,
                 ),
@@ -99,7 +102,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 56, right: 56),
-                  child: CustomTextFields(),
+                  child: CustomTextFields(controller: nameController,),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 53.0, top: 15),
@@ -220,6 +223,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
             email: emailController.text.trim(), password: pass)
             .whenComplete(() {
 
+
+          FirebaseFirestore.instance.collection('usersData').add({
+
+            'UserName': nameController.text,
+            'UserEmail': emailController.text,
+
+          });
+
           makeLoadingFalse();
         })
             .then((value) {
@@ -290,3 +301,4 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   }
 }
+
