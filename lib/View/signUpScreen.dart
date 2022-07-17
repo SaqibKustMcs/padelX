@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 import 'package:pedelx/View/loginScreen.dart';
 import 'package:pedelx/Widgets/CustomTextFields.dart';
+import 'package:pedelx/constants/helper.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -228,6 +229,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
             'UserName': nameController.text,
             'UserEmail': emailController.text,
+            "uid":getUserID(),
 
           });
 
