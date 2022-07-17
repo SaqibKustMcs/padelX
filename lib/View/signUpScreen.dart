@@ -113,12 +113,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 56, right: 56),
-                  child: CustomTextFields(controller: emailController, validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    return null;
-                  },),
+                  child: CustomTextFields(controller: emailController,),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 53.0, top: 15),
