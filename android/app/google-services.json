@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1022878407281",
+    "project_id": "padelx-d4c92",
+    "storage_bucket": "padelx-d4c92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022878407281:android:f3a2ba399d92c127f519d0",
+        "android_client_info": {
+          "package_name": "com.example.pedelx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022878407281-7g3phne4e0s0h785kd1cbfhg62q8odad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwtSXYdcg0-w7dokcAkiTrgRlpoXiKFF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022878407281-7g3phne4e0s0h785kd1cbfhg62q8odad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
