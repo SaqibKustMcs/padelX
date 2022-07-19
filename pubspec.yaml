@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^3.0.1
   get: ^4.6.5
   cloud_firestore: ^3.3.0
+  shared_preferences: ^2.0.15
   syncfusion_flutter_charts: ^20.2.38
   font_awesome_flutter: ^10.1.0
   bottom_navy_bar: ^6.0.0

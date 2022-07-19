@@ -30,58 +30,49 @@ class CustomTextFields extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical:5),
-      child: Container(
-        height: 50,
-        child: TextFormField(
-          obscureText: obscure,
-          validator: validator ??
-                  (String? value) {
-                if (value!.isEmpty) {
-                  return "Please fill out this feild";
-                }
-                return null;
-              },
-          cursorColor: Colors.black,
-          style:GoogleFonts.workSans(textStyle: TextStyle(color: Colors.black,)),
-          // cursorWidth: 20,
-          decoration: InputDecoration(
-            prefixIcon: prefixIcon??prefixIcon,
-            suffixIcon: leadinIcon??leadinIcon,
-            fillColor: fillColor!=null?fillColor:Color(0xffD9D9D9),
-            filled: true,
-            disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(borderradius!=null?borderradius:10),
-                borderSide: BorderSide(
-                  width: 1,
-                  color:Colors.white,
-                )),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(borderradius!=null?borderradius:10),
-                borderSide: BorderSide(
-                  width: 1,
-                  color: Colors.white,
-                )),
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(borderradius!=null?borderradius:10),
-                borderSide: BorderSide(
-                  width: 1,
-                  color:Colors.white,
-                )),
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(borderradius!=null?borderradius:10),
-                borderSide: BorderSide(
-                  width: 1,
-                  color: Colors.white,
-                )),
-            contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-            hintText: hintText ?? hintText,
-            hintStyle: GoogleFonts.workSans(textStyle: TextStyle(color: hintColor!=null?hintColor:Colors.black,)),
-            // hintStyle: TextStyle()
-          ),
-          onChanged: onchanged ?? onchanged,
-          onSaved: onsaved ?? onsaved,
-          controller: controller ?? controller,
+      child: TextFormField(
+        obscureText: obscure,
+        validator: validator ,
+        cursorColor: Colors.black,
+        style:GoogleFonts.workSans(textStyle: TextStyle(color: Colors.black,)),
+        // cursorWidth: 20,
+        decoration: InputDecoration(
+          prefixIcon: prefixIcon??prefixIcon,
+          suffixIcon: leadinIcon??leadinIcon,
+          fillColor: fillColor!=null?fillColor:Color(0xffD9D9D9),
+          filled: true,
+          disabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderradius!=null?borderradius:10),
+              borderSide: BorderSide(
+                width: 1,
+                color:Colors.white,
+              )),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderradius!=null?borderradius:10),
+              borderSide: BorderSide(
+                width: 1,
+                color: Colors.white,
+              )),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderradius!=null?borderradius:10),
+              borderSide: BorderSide(
+                width: 1,
+                color:Colors.white,
+              )),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderradius!=null?borderradius:10),
+              borderSide: BorderSide(
+                width: 1,
+                color: Colors.white,
+              )),
+          contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+          hintText: hintText ?? hintText,
+          hintStyle: GoogleFonts.workSans(textStyle: TextStyle(color: hintColor!=null?hintColor:Colors.black,)),
+          // hintStyle: TextStyle()
         ),
+        onChanged: onchanged ?? onchanged,
+        onSaved: onsaved ?? onsaved,
+        controller: controller ?? controller,
       ),
     );
   }
